@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6ADCDE31E41A983237233647 /* Pods_WKWebViewDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8B96FF5618161853DACC5A /* Pods_WKWebViewDemo.framework */; };
 		DA528082200455B800C230BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA528081200455B800C230BD /* AppDelegate.swift */; };
 		DA528084200455B800C230BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA528083200455B800C230BD /* ViewController.swift */; };
 		DA528087200455B800C230BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA528085200455B800C230BD /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D8B96FF5618161853DACC5A /* Pods_WKWebViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WKWebViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		730165A1117D963B6B16FF0A /* Pods-WKWebViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKWebViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo.release.xcconfig"; sourceTree = "<group>"; };
+		96E6220F181AABDF77A001AC /* Pods-WKWebViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WKWebViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DA52807E200455B800C230BD /* WKWebViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WKWebViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA528081200455B800C230BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA528083200455B800C230BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6ADCDE31E41A983237233647 /* Pods_WKWebViewDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14F55E0F3F018EB8CFE30382 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D8B96FF5618161853DACC5A /* Pods_WKWebViewDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		DA528075200455B800C230BD = {
 			isa = PBXGroup;
 			children = (
 				DA528080200455B800C230BD /* WKWebViewDemo */,
 				DA52807F200455B800C230BD /* Products */,
+				F377F71E655AAC86F84B1E7B /* Pods */,
+				14F55E0F3F018EB8CFE30382 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,6 +90,15 @@
 			path = Browser;
 			sourceTree = "<group>";
 		};
+		F377F71E655AAC86F84B1E7B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				96E6220F181AABDF77A001AC /* Pods-WKWebViewDemo.debug.xcconfig */,
+				730165A1117D963B6B16FF0A /* Pods-WKWebViewDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +106,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA528090200455B800C230BD /* Build configuration list for PBXNativeTarget "WKWebViewDemo" */;
 			buildPhases = (
+				9807CD28009FB22262869481 /* [CP] Check Pods Manifest.lock */,
 				DA52807A200455B800C230BD /* Sources */,
 				DA52807B200455B800C230BD /* Frameworks */,
 				DA52807C200455B800C230BD /* Resources */,
+				323D4EB485D39B2FC2E7692D /* [CP] Embed Pods Frameworks */,
+				790524130A4BBAB1F6518E22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -141,6 +168,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		323D4EB485D39B2FC2E7692D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		790524130A4BBAB1F6518E22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WKWebViewDemo/Pods-WKWebViewDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9807CD28009FB22262869481 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DA52807A200455B800C230BD /* Sources */ = {
@@ -284,6 +359,7 @@
 		};
 		DA528091200455B800C230BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96E6220F181AABDF77A001AC /* Pods-WKWebViewDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -300,6 +376,7 @@
 		};
 		DA528092200455B800C230BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 730165A1117D963B6B16FF0A /* Pods-WKWebViewDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
