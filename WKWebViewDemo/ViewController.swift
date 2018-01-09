@@ -12,6 +12,9 @@ import SnapKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var webContainer: UIView!
+    @IBOutlet weak var optionBtn: UIButton!
+    @IBOutlet weak var uriTextField: UITextField!
     lazy var browser: NETabBrowser = {
         let browser = NETabBrowser(incognito: false)
         return browser
@@ -27,12 +30,15 @@ class ViewController: UIViewController {
     }
 
     func installWebBrowser() {
-        view.addSubview(browser)
+        webContainer.addSubview(browser)
         browser.snp.makeConstraints { (maker) in
             maker.edges.equalToSuperview()
         }
     }
 
-
+    @IBAction func optionBtnAction(_ sender: Any) {
+        print("Title:\(browser.title ?? "null")")
+    }
+    
 }
 

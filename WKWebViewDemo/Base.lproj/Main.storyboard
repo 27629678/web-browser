@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="taV-JE-QUQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,31 +20,67 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sl1-co-ygf" userLabel="top-bar">
+                                <rect key="frame" x="0.0" y="20" width="375" height="47"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7F-Xr-wZo" userLabel="option-btn">
+                                        <rect key="frame" x="321" y="8" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="v1d-WX-Kfq"/>
+                                            <constraint firstAttribute="width" constant="46" id="zec-8U-Fsc"/>
+                                        </constraints>
+                                        <state key="normal" title="***"/>
+                                        <connections>
+                                            <action selector="optionBtnAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="g3Z-b3-PvV"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="http://www.baidu.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8DT-hT-sR3" userLabel="input-url">
+                                        <rect key="frame" x="8" y="8" width="313" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="fgV-Z3-QPm"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="url"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="N7F-Xr-wZo" secondAttribute="trailing" constant="8" id="GW3-Vh-oIq"/>
+                                    <constraint firstItem="8DT-hT-sR3" firstAttribute="trailing" secondItem="N7F-Xr-wZo" secondAttribute="leading" id="YvJ-K0-2qP"/>
+                                    <constraint firstItem="8DT-hT-sR3" firstAttribute="centerY" secondItem="Sl1-co-ygf" secondAttribute="centerY" id="cIE-0K-6qv"/>
+                                    <constraint firstItem="8DT-hT-sR3" firstAttribute="leading" secondItem="Sl1-co-ygf" secondAttribute="leading" constant="8" id="dJC-a5-Dbo"/>
+                                    <constraint firstAttribute="height" constant="47" id="yVJ-AJ-W7v"/>
+                                    <constraint firstItem="N7F-Xr-wZo" firstAttribute="centerY" secondItem="Sl1-co-ygf" secondAttribute="centerY" id="zfb-zG-vkh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TFV-Jm-FpX" userLabel="web-container">
+                                <rect key="frame" x="0.0" y="75" width="375" height="592"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sl1-co-ygf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Fm0-wu-30N"/>
+                            <constraint firstItem="TFV-Jm-FpX" firstAttribute="top" secondItem="Sl1-co-ygf" secondAttribute="bottom" constant="8" id="QMP-Yo-Jb5"/>
+                            <constraint firstAttribute="trailing" secondItem="Sl1-co-ygf" secondAttribute="trailing" id="Siw-Rv-vjd"/>
+                            <constraint firstItem="Sl1-co-ygf" firstAttribute="top" secondItem="QqX-yG-1wS" secondAttribute="bottom" id="XFz-G5-fLJ"/>
+                            <constraint firstItem="VRn-wu-vHl" firstAttribute="top" secondItem="TFV-Jm-FpX" secondAttribute="bottom" id="aEL-C4-Rwc"/>
+                            <constraint firstItem="TFV-Jm-FpX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eGm-cZ-3eh"/>
+                            <constraint firstAttribute="trailing" secondItem="TFV-Jm-FpX" secondAttribute="trailing" id="mr0-wk-T5W"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eVr-HY-vsi"/>
+                    <connections>
+                        <outlet property="optionBtn" destination="N7F-Xr-wZo" id="EXe-3I-Xft"/>
+                        <outlet property="uriTextField" destination="8DT-hT-sR3" id="Pg7-PC-yRj"/>
+                        <outlet property="webContainer" destination="TFV-Jm-FpX" id="sb3-YX-IA3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="455.19999999999999" y="118.29085457271366"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="PmB-09-rk8">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="taV-JE-QUQ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iCL-S5-wu1">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="CZD-GZ-TMP"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAB-AL-cp6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-321" y="118"/>
         </scene>
     </scenes>
 </document>
