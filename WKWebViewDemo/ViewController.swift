@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 import SnapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var webContainer: UIView!
     @IBOutlet weak var optionBtn: UIButton!
@@ -26,7 +26,8 @@ class ViewController: UIViewController {
         // install web view
         installWebBrowser()
         
-        _ = browser.load(URLRequest(url: URL(string: "http://www.163.com")!))
+        // set uri text input delegate
+        uriTextField.delegate = self
     }
 
     func installWebBrowser() {
@@ -41,4 +42,22 @@ class ViewController: UIViewController {
     }
     
 }
+
+extension ViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        guard let url = textField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) else {
+            return false
+        }
+        
+        guard let uri = URL(string:url) else {
+            return false
+        }
+        
+        _ = browser.load(URLRequest(url: uri))
+        
+        return true
+    }
+}
+
+
 
