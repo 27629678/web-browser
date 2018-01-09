@@ -11,9 +11,23 @@ import UIKit
 import WebKit
 
 class NETabBrowser: NEWebBrowser {
+    
+    lazy var navDelegate: NENavigationDelegate = {
+        let delegate = NENavigationDelegate()
+        return delegate
+    }()
 
     init(incognito: Bool) {
-        super.init(frame: CGRect.zero, configuration: WKWebViewConfiguration())
+        let config = WKWebViewConfiguration()
+        
+        let userScript = WKUserScript(source: "console.log('hello, world.')",
+                                      injectionTime: .atDocumentEnd,
+                                      forMainFrameOnly: true)
+        config.userContentController.addUserScript(userScript)
+        
+        super.init(frame: CGRect.zero, configuration: config)
+        
+        navigationDelegate = navDelegate
     }
     
     required init?(coder: NSCoder) {
