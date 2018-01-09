@@ -15,7 +15,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var webContainer: UIView!
     @IBOutlet weak var optionBtn: UIButton!
     @IBOutlet weak var uriTextField: UITextField!
-    lazy var browser: NETabBrowser = {
+    
+    // @objc used for kvo
+    @objc lazy var browser: NETabBrowser = {
         let browser = NETabBrowser(incognito: false)
         return browser
     }()
@@ -28,6 +30,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // set uri text input delegate
         uriTextField.delegate = self
+        
+        addObserver(self, forKeyPath: #keyPath(browser.estimatedProgress), options: [.old, .new], context: nil)
     }
 
     func installWebBrowser() {
@@ -41,6 +45,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print("Title:\(browser.title ?? "null")")
     }
     
+    override
+    func observeValue(forKeyPath keyPath: String?,
+                      of object: Any?,
+                      change: [NSKeyValueChangeKey : Any]?,
+                      context: UnsafeMutableRawPointer?)
+    {
+        if keyPath == #keyPath(browser.estimatedProgress) {
+            print("progress:\(browser.estimatedProgress)")
+        }
+    }
 }
 
 extension ViewController {
