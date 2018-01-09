@@ -12,6 +12,7 @@
 		DA528087200455B800C230BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA528085200455B800C230BD /* Main.storyboard */; };
 		DA528089200455B800C230BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA528088200455B800C230BD /* Assets.xcassets */; };
 		DA52808C200455B800C230BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA52808A200455B800C230BD /* LaunchScreen.storyboard */; };
+		DA5280952004564700C230BD /* NEWebBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5280942004564700C230BD /* NEWebBrowser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DA528088200455B800C230BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA52808B200455B800C230BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA52808D200455B800C230BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA5280942004564700C230BD /* NEWebBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEWebBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		DA528080200455B800C230BD /* WKWebViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DA5280932004560F00C230BD /* Browser */,
 				DA528081200455B800C230BD /* AppDelegate.swift */,
 				DA528083200455B800C230BD /* ViewController.swift */,
 				DA528085200455B800C230BD /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				DA52808D200455B800C230BD /* Info.plist */,
 			);
 			path = WKWebViewDemo;
+			sourceTree = "<group>";
+		};
+		DA5280932004560F00C230BD /* Browser */ = {
+			isa = PBXGroup;
+			children = (
+				DA5280942004564700C230BD /* NEWebBrowser.swift */,
+			);
+			path = Browser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			files = (
 				DA528084200455B800C230BD /* ViewController.swift in Sources */,
 				DA528082200455B800C230BD /* AppDelegate.swift in Sources */,
+				DA5280952004564700C230BD /* NEWebBrowser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LH7676BHR;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.WKWebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +305,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3LH7676BHR;
 				INFOPLIST_FILE = WKWebViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xy.WKWebViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
