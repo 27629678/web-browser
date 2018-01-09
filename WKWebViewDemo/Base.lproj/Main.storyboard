@@ -44,10 +44,16 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="URL" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES" textContentType="url"/>
                                     </textField>
+                                    <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RxM-W4-5jd">
+                                        <rect key="frame" x="8" y="45" width="359" height="2"/>
+                                    </progressView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="RxM-W4-5jd" secondAttribute="trailing" constant="8" id="4U2-PJ-CVP"/>
+                                    <constraint firstAttribute="bottom" secondItem="RxM-W4-5jd" secondAttribute="bottom" id="D2M-7Q-u1O"/>
                                     <constraint firstAttribute="trailing" secondItem="N7F-Xr-wZo" secondAttribute="trailing" constant="8" id="GW3-Vh-oIq"/>
+                                    <constraint firstItem="RxM-W4-5jd" firstAttribute="leading" secondItem="Sl1-co-ygf" secondAttribute="leading" constant="8" id="PQ9-y0-eAe"/>
                                     <constraint firstItem="8DT-hT-sR3" firstAttribute="trailing" secondItem="N7F-Xr-wZo" secondAttribute="leading" id="YvJ-K0-2qP"/>
                                     <constraint firstItem="8DT-hT-sR3" firstAttribute="centerY" secondItem="Sl1-co-ygf" secondAttribute="centerY" id="cIE-0K-6qv"/>
                                     <constraint firstItem="8DT-hT-sR3" firstAttribute="leading" secondItem="Sl1-co-ygf" secondAttribute="leading" constant="8" id="dJC-a5-Dbo"/>
@@ -74,6 +80,7 @@
                     <navigationItem key="navigationItem" id="eVr-HY-vsi"/>
                     <connections>
                         <outlet property="optionBtn" destination="N7F-Xr-wZo" id="EXe-3I-Xft"/>
+                        <outlet property="progressbar" destination="RxM-W4-5jd" id="fax-HG-BWJ"/>
                         <outlet property="uriTextField" destination="8DT-hT-sR3" id="Pg7-PC-yRj"/>
                         <outlet property="webContainer" destination="TFV-Jm-FpX" id="sb3-YX-IA3"/>
                     </connections>

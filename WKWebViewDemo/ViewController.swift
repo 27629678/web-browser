@@ -12,6 +12,7 @@ import SnapKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var progressbar: UIProgressView!
     @IBOutlet weak var webContainer: UIView!
     @IBOutlet weak var optionBtn: UIButton!
     @IBOutlet weak var uriTextField: UITextField!
@@ -30,7 +31,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         // set uri text input delegate
         uriTextField.delegate = self
+        progressbar.setProgress(0, animated: false)
         
+        // observer
         addObserver(self, forKeyPath: #keyPath(browser.estimatedProgress), options: [.old, .new], context: nil)
     }
 
@@ -52,7 +55,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
                       context: UnsafeMutableRawPointer?)
     {
         if keyPath == #keyPath(browser.estimatedProgress) {
-            print("progress:\(browser.estimatedProgress)")
+            let progress = Float(browser.estimatedProgress)
+            if progress >= 0.99 {
+                progressbar.setProgress(0, animated: false)
+            }
+            else {
+                progressbar.setProgress(progress, animated: true)
+            }
         }
     }
 }
