@@ -10,6 +10,8 @@ import WebKit
 
 class NEWebBrowser: WKWebView {
 
-    
-
+    override
+    func load(_ request: URLRequest) -> WKNavigation? {
+        return super.load(request)
+    }
 }

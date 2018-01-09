@@ -7,19 +7,30 @@
 //
 
 import UIKit
+import WebKit
+import SnapKit
 
 class ViewController: UIViewController {
 
+    lazy var browser: NETabBrowser = {
+        let browser = NETabBrowser(incognito: false)
+        return browser
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
+        // install web view
+        installWebBrowser()
         
+        _ = browser.load(URLRequest(url: URL(string: "http://www.163.com")!))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func installWebBrowser() {
+        view.addSubview(browser)
+        browser.snp.makeConstraints { (maker) in
+            maker.edges.equalToSuperview()
+        }
     }
 
 
