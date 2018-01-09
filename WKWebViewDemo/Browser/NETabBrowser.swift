@@ -24,9 +24,13 @@ class NETabBrowser: NEWebBrowser {
                                       injectionTime: .atDocumentEnd,
                                       forMainFrameOnly: true)
         config.userContentController.addUserScript(userScript)
+        if #available(iOS 11.0, *) {
+            config.setURLSchemeHandler(NEURLSchemeHandler(), forURLScheme: "netease")
+        } else {
+            // Fallback on earlier versions
+        }
         
         super.init(frame: CGRect.zero, configuration: config)
-        
         navigationDelegate = navDelegate
     }
     

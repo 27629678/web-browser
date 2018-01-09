@@ -15,6 +15,7 @@
 		DA52808C200455B800C230BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA52808A200455B800C230BD /* LaunchScreen.storyboard */; };
 		DA5280952004564700C230BD /* NEWebBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5280942004564700C230BD /* NEWebBrowser.swift */; };
 		DA7586E92004F1E2007AB8D0 /* NENavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7586E82004F1E2007AB8D0 /* NENavigationDelegate.swift */; };
+		DA7586EB2004FF2A007AB8D0 /* NEURLSchemeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7586EA2004FF2A007AB8D0 /* NEURLSchemeHandler.swift */; };
 		DAB7DF51200460630024FA0E /* NETabBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7DF50200460630024FA0E /* NETabBrowser.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		DA52808D200455B800C230BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA5280942004564700C230BD /* NEWebBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEWebBrowser.swift; sourceTree = "<group>"; };
 		DA7586E82004F1E2007AB8D0 /* NENavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NENavigationDelegate.swift; sourceTree = "<group>"; };
+		DA7586EA2004FF2A007AB8D0 /* NEURLSchemeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NEURLSchemeHandler.swift; sourceTree = "<group>"; };
 		DAB7DF50200460630024FA0E /* NETabBrowser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NETabBrowser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 				DA5280942004564700C230BD /* NEWebBrowser.swift */,
 				DAB7DF50200460630024FA0E /* NETabBrowser.swift */,
 				DA7586E82004F1E2007AB8D0 /* NENavigationDelegate.swift */,
+				DA7586EA2004FF2A007AB8D0 /* NEURLSchemeHandler.swift */,
 			);
 			path = Browser;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA7586EB2004FF2A007AB8D0 /* NEURLSchemeHandler.swift in Sources */,
 				DA7586E92004F1E2007AB8D0 /* NENavigationDelegate.swift in Sources */,
 				DA528084200455B800C230BD /* ViewController.swift in Sources */,
 				DA528082200455B800C230BD /* AppDelegate.swift in Sources */,
