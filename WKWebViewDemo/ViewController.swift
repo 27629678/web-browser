@@ -72,11 +72,15 @@ extension ViewController {
             return false
         }
         
-        guard let uri = URL(string:url) else {
-            return false
+        var target = url
+        if !(url.lowercased().hasPrefix("http")) {
+            target = "http://".appending(url)
         }
         
-        _ = browser.load(URLRequest(url: uri))
+        guard let uri = URL(string:target) else {
+            return false
+        }
+        _ = self.browser.load(URLRequest(url: uri))
         
         return true
     }
