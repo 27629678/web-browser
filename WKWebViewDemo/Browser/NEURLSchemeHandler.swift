@@ -17,11 +17,11 @@ class NEURLSchemeHandler: NSObject, WKURLSchemeHandler {
         print("SchemeHandler:\(String(describing:urlSchemeTask.request.url))")
         
         let resp = URLResponse(url: urlSchemeTask.request.url!,
-                               mimeType: "text/plain",
+                               mimeType: "application/json",
                                expectedContentLength: -1,
                                textEncodingName: nil)
         urlSchemeTask.didReceive(resp)
-        urlSchemeTask.didReceive("hello, world.".data(using: String.Encoding.utf8)!)
+        urlSchemeTask.didReceive("{\"greeting\": \"hello, world.\"}".data(using: String.Encoding.utf8)!)
         urlSchemeTask.didFinish()
     }
     
