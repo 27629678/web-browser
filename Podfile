@@ -7,4 +7,5 @@ target 'WKWebViewDemo' do
 
   # Pods for WKWebViewDemo
   pod 'SnapKit', '~> 4.0.0'
+  pod 'GRMustache', '~> 7.3.2'
 end

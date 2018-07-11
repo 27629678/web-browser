@@ -26,6 +26,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        OCRunner.run()
+        
         // install web view
         installWebBrowser()
         
